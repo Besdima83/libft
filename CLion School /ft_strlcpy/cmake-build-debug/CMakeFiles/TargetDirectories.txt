@@ -1,0 +1,3 @@
+/Users/bakali/CLionProjects/ft_strlcpy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/bakali/CLionProjects/ft_strlcpy/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bakali/CLionProjects/ft_strlcpy/cmake-build-debug/CMakeFiles/ft_strlcpy.dir

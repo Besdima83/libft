@@ -1,0 +1,229 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+MacBook-Pro-Dmitry.local
+Darwin 20.1.0 x86_64
+$> date
+Thu Nov 19 00:19:24 MSK 2020
+$> gcc --version
+Apple clang version 12.0.0 (clang-1200.0.32.27)
+Target: x86_64-apple-darwin20.1.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple clang version 12.0.0 (clang-1200.0.32.27)
+Target: x86_64-apple-darwin20.1.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+Error: global scope bad aligned
+Norme check failed
+
+= Compiling libft ==============================================================
+$> make re
+rm -f libft.a
+gcc -Wall -Werror -Wextra -c   -c -o ft_itoa.o ft_itoa.c
+ft_itoa.c:15:2: error: use of undeclared identifier 'size_t'; did you mean 'sizeof'?
+        size_t  len;
+        ^~~~~~
+        sizeof
+ft_itoa.c:15:9: error: use of undeclared identifier 'len'
+        size_t  len;
+                ^
+ft_itoa.c:19:2: error: use of undeclared identifier 'len'
+        len = 0;
+        ^
+ft_itoa.c:21:3: error: use of undeclared identifier 'len'
+                len++;
+                ^
+ft_itoa.c:25:3: error: use of undeclared identifier 'len'
+                len++;
+                ^
+ft_itoa.c:27:10: error: use of undeclared identifier 'len'
+        return (len);
+                ^
+ft_itoa.c:33:2: error: use of undeclared identifier 'size_t'; did you mean 'sizeof'?
+        size_t  numleng;
+        ^~~~~~
+        sizeof
+ft_itoa.c:33:9: error: use of undeclared identifier 'numleng'
+        size_t  numleng;
+                ^
+ft_itoa.c:34:2: error: use of undeclared identifier 'size_t'; did you mean 'sizeof'?
+        size_t  d;
+        ^~~~~~
+        sizeof
+ft_itoa.c:34:9: error: use of undeclared identifier 'd'
+        size_t  d;
+                ^
+ft_itoa.c:36:2: error: use of undeclared identifier 'numleng'
+        numleng = ft_numleng(n);
+        ^
+ft_itoa.c:37:22: error: implicitly declaring library function 'malloc' with type 'void *(unsigned long)' [-Werror,-Wimplicit-function-declaration]
+        if (!(str = (char *)malloc(numleng + 1)))
+                            ^
+ft_itoa.c:37:22: note: include the header <stdlib.h> or explicitly provide a declaration for 'malloc'
+ft_itoa.c:37:29: error: use of undeclared identifier 'numleng'
+        if (!(str = (char *)malloc(numleng + 1)))
+                                   ^
+ft_itoa.c:38:11: error: use of undeclared identifier 'NULL'
+                return (NULL);
+                        ^
+ft_itoa.c:39:6: error: use of undeclared identifier 'numleng'
+        str[numleng] = '\0';
+            ^
+ft_itoa.c:43:3: error: use of undeclared identifier 'd'
+                d = 1;
+                ^
+ft_itoa.c:46:3: error: use of undeclared identifier 'd'
+                d = 0;
+                ^
+ft_itoa.c:47:9: error: use of undeclared identifier 'numleng'
+        while (numleng-- > d)
+               ^
+ft_itoa.c:47:21: error: use of undeclared identifier 'd'
+        while (numleng-- > d)
+                           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make: *** [ft_itoa.o] Error 1
+
+$> ls -la libft.a
+
+= Part1_functions ==============================================================
+
+= ft_memset.c ==================================================================
+$> norminette ft_memset.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memset.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_bzero.c ===================================================================
+$> norminette ft_bzero.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_bzero.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_calloc.c ==================================================================
+$> norminette ft_calloc.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_calloc.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_memcpy.c ==================================================================
+$> norminette ft_memcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_memccpy.c =================================================================
+$> norminette ft_memccpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memccpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_memmove.c =================================================================
+$> norminette ft_memmove.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memmove.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_memchr.c ==================================================================
+$> norminette ft_memchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_memcmp.c ==================================================================
+$> norminette ft_memcmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strlen.c ==================================================================
+$> norminette ft_strlen.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlen.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strdup.c ==================================================================
+$> norminette ft_strdup.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strdup.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strlcat.c =================================================================
+$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcat.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strlcpy.c =================================================================
+$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strchr.c ==================================================================
+$> norminette ft_strchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strrchr.c =================================================================
+$> norminette ft_strrchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strrchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strnstr.c =================================================================
+$> norminette ft_strnstr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strnstr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_strncmp.c =================================================================
+$> norminette ft_strncmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strncmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_atoi.c ====================================================================
+$> norminette ft_atoi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_atoi.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_isalpha.c =================================================================
+$> norminette ft_isalpha.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isalpha.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_isdigit.c =================================================================
+$> norminette ft_isdigit.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isdigit.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_isalnum.c =================================================================
+$> norminette ft_isalnum.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isalnum.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_isascii.c =================================================================
+$> norminette ft_isascii.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isascii.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_isprint.c =================================================================
+$> norminette ft_isprint.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isprint.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Volumes/Besdima/21School/libft-war-machine-master/dirlibft/libft.a'
+
+= ft_toupper.c =================================================================
+$> norminette ft_toupper.c | grep -E '(Error|Warning)'

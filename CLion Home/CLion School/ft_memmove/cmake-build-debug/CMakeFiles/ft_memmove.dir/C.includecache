@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/bakali/CLionProjects/ft_memmove/main.c
+stdio.h
+-
+string.h
+-
+strings.h
+-
+stdio.h
+-
+string.h
+-
+
