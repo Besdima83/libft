@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besdima <besdima@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bakali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 14:08:11 by bakali            #+#    #+#             */
-/*   Updated: 2020/11/18 23:50:00 by besdima          ###   ########.fr       */
+/*   Created: 2020/11/20 01:14:50 by bakali            #+#    #+#             */
+/*   Updated: 2020/11/20 01:15:49 by bakali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_malloc_error(char **tab)
+static char			**ft_malloc_error(char **tab)
 {
 	unsigned int	i;
 
@@ -53,7 +53,8 @@ static unsigned int	ft_get_nb_strs(char const *s, char c)
 	return (nb_strs);
 }
 
-static void	ft_get_next_str(char **next_str, unsigned int *next_str_len, char c)
+static void			ft_get_next_str(char **next_str,
+unsigned int *next_str_len, char c)
 {
 	unsigned int	i;
 
@@ -71,7 +72,7 @@ static void	ft_get_next_str(char **next_str, unsigned int *next_str_len, char c)
 	}
 }
 
-char	**ft_split(char const *s, char c)
+char				**ft_split(char const *s, char c)
 {
 	char			**tab;
 	char			*next_str;
