@@ -5,7 +5,7 @@
 ###################################
 
 #Edit the next line with the path of your libft project.
-PATH_LIBFT=/Volumes/Besdima/21School/libft
+PATH_LIBFT=/Volumes/Besdima/21Schooll_new/libft
 #If you use a relative path, don't put double quotes.
 #For example :
 #PATH_LIBFT=~/libft		==> Right
